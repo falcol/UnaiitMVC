@@ -1,0 +1,51 @@
+@model UnaiitMVC.Models.Grade.GradeTable
+
+@{
+    ViewData["Title"] = "Sửa";
+}
+
+<h1>Sửa</h1>
+
+<h4>GradeTable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label"></label>
+                <input asp-for="Capacity" class="form-control" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Founded" class="control-label"></label>
+                <input asp-for="Founded" class="form-control" />
+                <span asp-validation-for="Founded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Creator" class="control-label"></label>
+                <input asp-for="Creator" class="form-control" />
+                <span asp-validation-for="Creator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FacultyId" class="control-label"></label>
+                <select asp-for="FacultyId" class="form-control" asp-items="ViewBag.FacultyId"></select>
+                <span asp-validation-for="FacultyId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="mt-2 btn btn-success">Quay lại danh sách</a>
+</div>
+

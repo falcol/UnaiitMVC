@@ -1,0 +1,51 @@
+@model UnaiitMVC.Models.Faculty.FacultyTable
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Xóa</h1>
+
+<h3>Bạn có muốn xóa?</h3>
+<div>
+    <h4>FacultyTable</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Founded)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Founded)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Creator)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Creator)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.School)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.School.Address)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-success">Quay lại danh sách</a>
+    </form>
+</div>

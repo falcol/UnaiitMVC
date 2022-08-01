@@ -1,0 +1,42 @@
+@model UnaiitMVC.Models.School.SchoolTable
+
+@{
+    ViewData["Title"] = "Thông tin";
+}
+
+<h1>Thông tin</h1>
+
+<div>
+    <h4>SchoolTable</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Founded)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Founded)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-secondary">Sửa</a> |
+    <a asp-action="Index" class="btn btn-primary">Quay lại danh sách</a>
+</div>

@@ -1,0 +1,36 @@
+@using Microsoft.AspNetCore.Identity
+@using UnaiitMVC.Models
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+   
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-controller="Manage" asp-action="Index"
+                title="Manage">
+                    <i class="far fa-user"></i>
+                    @UserManager.GetUserName(User)!</a>
+            </li>
+    <form asp-area="Identity" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
+            <li class="nav-item">
+                <button title="Đăng xuất" type="submit" class="btn btn-link navbar-btn navbar-link text-dark">
+                    Đăng xuất
+                </button>
+            </li>
+    </form>
+        </ul>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-controller="Account" asp-action="Register">Đăng ký</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+    </li>
+}
+</ul>
